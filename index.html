@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菅沢たまき 多古町長選挙 公式サイト</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero .name {
+            font-size: 2.5em;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        section {
+            margin-bottom: 80px;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            color: #667eea;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .profile {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 画像がコンテナ全体を覆うように調整 */
+            border-radius: 10px;
+        }
+
+        .profile-content h3 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .profile-content p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .policies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .policy-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .policy-card h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .achievements {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .achievements ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .achievements li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        
+        .achievements li strong {
+            color: #667eea;
+        }
+        
+        .vision-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .vision-box h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .vision-box p {
+            font-size: 1.2em;
+            line-height: 2;
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .contact-item h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .instagram-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .instagram-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .hero .name {
+                font-size: 1.8em;
+            }
+            
+            .profile {
+                grid-template-columns: 1fr;
+            }
+            
+            .policies {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>わが町、再生！</h1>
+        <div class="name">菅沢たまき</div>
+        <div class="subtitle">多古町長選挙に挑戦します</div>
+    </div>
+    
+    <div class="container">
+        <section id="profile">
+            <h2>プロフィール</h2>
+            <div class="profile">
+                <div class="profile-image" id="profileImage">
+                    <img src="IMG_20251209_150349.jpg" alt="菅沢たまき氏のプロフィール写真">
+                </div>
+                <div class="profile-content">
+                    <h3>菅沢たまき</h3>
+                    <p><strong>経歴:</strong> 多古町議会議員 4期16年</p>
+                    <p>長年にわたり多古町議会議員として、住民の皆様の声に耳を傾け、地域の課題解決に取り組んでまいりました。</p>
+                    <p>高齢者の交通問題、教育環境の整備、地域産業の振興など、町民の皆様の生活に直結する問題に真摯に向き合ってきました。</p>
+                    <p>今、成田空港の「第2の開港」という大きなチャンスを前に、多古町の未来のため、町長として新たな挑戦をさせていただきたいと決意いたしました。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="policy">
+            <h2>重点政策</h2>
+            <div class="policies">
+                <div class="policy-card">
+                    <h3>🛫 成田空港との共生</h3>
+                    <p>「第2の開港」を多古町発展の好機に。空港関連産業の誘致と雇用創出で、若者が帰ってこられる町へ。</p>
+                </div>
+                <div class="policy-card">
+                    <h3>🚌 交通問題の解決</h3>
+                    <p>高齢者や交通弱者の移動を支援。デマンド交通の拡充と、持続可能な公共交通システムの構築。</p>
+                </div>
+                <div class="policy-card">
+                    <h3>👶 子育て・教育支援</h3>
+                    <p>子育て世代が安心して暮らせる環境づくり。教育の質の向上と、子育て支援の充実。</p>
+                </div>
+                <div class="policy-card">
+                    <h3>🌾 地域産業の振興</h3>
+                    <p>農業を基幹産業として守り、発展させる。地域ブランドの確立と6次産業化の推進。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="achievements">
+            <h2>これまでの実績</h2>
+            <div class="achievements">
+                <ul>
+                    <li>
+                        <strong>2017年9月議会:</strong> 高齢者の通院のため、デマンド交通の平日運行を要望し、実現に向けて尽力
+                    </li>
+                    <li>
+                        <strong>循環バス問題:</strong> 循環バスの完全廃止に反対し、住民の移動手段確保のために活動
+                    </li>
+                    <li>
+                        <strong>議員活動16年:</strong> 4期にわたり、町民の皆様の声を町政に届け続けてきました
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="vision">
+            <h2>多古町の未来ビジョン</h2>
+            <div class="vision-box">
+                <h3>今後の4年間は多古町にとって大きなチャンス</h3>
+                <p>成田空港の「第2の開港」により、多古町は新たな発展の時代を迎えます。</p>
+                <p>この好機を逃すことなく、町の資源を最大限に活かし、</p>
+                <p>すべての世代が安心して暮らせる持続可能な町づくりを実現します。</p>
+                <p><strong>「わが町、再生！」</strong></p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>後援会情報</h2>
+            <div class="contact-info">
+                <h3>菅沢たまき後援会事務所</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3>📍 事務所所在地</h3>
+                        <p>多古町大高2-32</p>
+                        <p>多古町高根2915-2</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 お問い合わせ</h3>
+                        <p>電話: 080-1189-9895</p>
+                        <p>責任者: 渡邉</p>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <a href="#" class="instagram-btn">📸 Instagram で活動を発信中</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 菅沢たまき後援会 All Rights Reserved.</p>
+    </footer>
+
+    </body>
+</html>
