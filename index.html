@@ -41,31 +41,38 @@
             font-weight: bold;
         }
         
+        /* --- スローガンのデザイン変更箇所 --- */
         .hero .slogan {
-            font-size: 2em;
-            margin: 25px 0;
+            font-size: 2.2em; /* 文字サイズを少し大きく */
+            margin: 30px 0;
             font-weight: 900;
-            background: linear-gradient(135deg, #FFC107 0%, #FF6B35 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: none;
-            padding: 15px 30px;
-            border: 4px solid #FF6B35;
-            border-radius: 15px;
+            color: #FFFFFF; /* 文字色を白にはっきりと */
+            /* 文字のグラデーションを廃止し、背景色を濃いグラデーションに変更 */
+            background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.3); /* 文字に少し影をつけて立体的に */
+            padding: 18px 50px; /* 余白を広げて堂々と */
+            border-radius: 50px; /* 丸みを強くして視認性を高める */
             display: inline-block;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            /* 影の色をオレンジに合わせて調整し、発光しているような効果に */
+            box-shadow: 0 10px 25px rgba(255, 87, 34, 0.5);
             animation: pulse 2s ease-in-out infinite;
         }
         
         @keyframes pulse {
-            0%, 100% {
+            0% {
                 transform: scale(1);
+                box-shadow: 0 10px 25px rgba(255, 87, 34, 0.5);
             }
             50% {
-                transform: scale(1.05);
+                transform: scale(1.03); /* 動きを少し控えめに上品に */
+                box-shadow: 0 15px 35px rgba(255, 87, 34, 0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 10px 25px rgba(255, 87, 34, 0.5);
             }
         }
+        /* ------------------------------------ */
         
         .hero .subtitle {
             font-size: 1.5em;
@@ -280,9 +287,11 @@
                 font-size: 2.2em;
             }
             
+            /* スマホ表示時のスローガン調整 */
             .hero .slogan {
-                font-size: 1.5em;
-                padding: 10px 20px;
+                font-size: 1.6em;
+                padding: 15px 30px;
+                margin: 20px 0;
             }
             
             .profile {
@@ -368,4 +377,41 @@
         </section>
         
         <section id="vision">
-            <h2>多古町の未来ビジョン
+            <h2>多古町の未来ビジョン</h2>
+            <div class="vision-box">
+                <h3>今後の4年間は多古町にとって大きなチャンス</h3>
+                <p>成田空港の「第2の開港」により、多古町は新たな発展の時代を迎えます。</p>
+                <p>この好機を逃すことなく、町の資源を最大限に活かし、</p>
+                <p>すべての世代が安心して暮らせる持続可能な町づくりを実現します。</p>
+                <p><strong>「わが町、再生！」</strong></p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>後援会情報</h2>
+            <div class="contact-info">
+                <h3>菅沢たまき後援会事務所</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3>📍 事務所所在地</h3>
+                        <p>多古町大高2-32</p>
+                        <p>多古町高根2915-2</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 お問い合わせ</h3>
+                        <p>電話: 080-1189-9895</p>
+                        <p>責任者: 渡邉</p>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <a href="https://www.instagram.com/fuukura.tamaki/" class="instagram-btn">📸 Instagram で活動を発信中</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 菅沢たまき後援会 All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
