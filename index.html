@@ -6,291 +6,409 @@
     <title>菅沢たまき 公式サイト</title>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #FF9800;
-            --secondary-color: #FF5722;
-            --accent-color: #FFEB3B;
-            --bg-color: #FFF8E1;
-            --text-color: #333;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #FFF8E1;
+            background-image: radial-gradient(#FFDDAA 1px, transparent 0);
+            background-size: 8px 8px;
         }
-
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-
-        /* ヘッダー・ヒーロー */
+        
         .hero {
             background: linear-gradient(135deg, #FFDDAA 0%, #FFB677 100%);
-            padding: 80px 20px;
+            color: #333;
+            padding: 100px 20px;
             text-align: center;
-            border-bottom: 5px solid var(--primary-color);
         }
-
-        .hero h1 { font-size: 2.5em; font-weight: 900; margin-bottom: 10px; }
-        .hero .name { font-size: 3.5em; font-weight: 900; color: #000; margin: 10px 0; }
         
-        .slogan-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: #fff;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 1.8em;
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 25px;
+            text-shadow: 2px 3px 5px rgba(0,0,0,0.2);
             font-weight: 900;
-            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.3);
+        }
+        
+        .hero .name {
+            font-size: 3em;
             margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        /* スローガンのデザイン（見やすく調整済み） */
+        .hero .slogan {
+            font-size: 2.2em;
+            margin: 30px 0;
+            font-weight: 900;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+            padding: 18px 50px;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(255, 87, 34, 0.5);
             animation: pulse 2s ease-in-out infinite;
         }
-
+        
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+                box-shadow: 0 10px 25px rgba(255, 87, 34, 0.5);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 15px 35px rgba(255, 87, 34, 0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 10px 25px rgba(255, 87, 34, 0.5);
+            }
         }
-
-        .hero .subtitle { font-size: 1.5em; font-weight: 700; color: var(--secondary-color); }
-
-        /* セクション共通 */
-        section { padding: 40px 0; }
+        
+        .hero .subtitle {
+            font-size: 1.5em;
+            margin-top: 10px;
+            font-weight: 700; /* 強調のため少し太字にしました */
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        section {
+            margin-bottom: 80px;
+        }
+        
         h2 {
-            font-size: 2em;
-            text-align: center;
+            font-size: 2.5em;
+            color: #667eea;
             margin-bottom: 30px;
-            position: relative;
             padding-bottom: 15px;
+            border-bottom: 2px dashed #FFDDAA;
+            font-weight: 700;
+            position: relative;
         }
+
         h2::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--primary-color);
+            bottom: -8px;
+            left: 0;
+            width: 70px;
+            height: 6px;
+            background-color: #FFC107;
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(255, 193, 7, 0.4);
+        }
+        
+        .profile {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            background-color: #f0f0f0;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
         }
 
-        /* チャンスの詳細 */
-        .vision-box {
-            background: #fff;
-            padding: 30px;
-            border-radius: 20px;
-            border: 2px solid var(--primary-color);
+        .profile-content h3 {
+            font-size: 2em;
+            color: #2c3e50;
             margin-bottom: 20px;
         }
-        .vision-box h3 { color: var(--secondary-color); margin-bottom: 15px; text-align: center; }
-        .vision-box ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        .vision-box li { padding: 10px; background: var(--bg-color); border-radius: 10px; font-size: 0.95em; }
-        .vision-box li strong { color: var(--secondary-color); font-size: 1.1em; }
-
-        /* 5つの事業 */
-        .action-list {
+        
+        .profile-content p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .policies {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
-        .action-card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 8px solid var(--accent-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .action-card h3 { color: var(--secondary-color); margin-bottom: 10px; display: flex; align-items: center; }
-        .action-card h3 span { background: var(--accent-color); color: #000; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; font-size: 0.8em; font-weight: 900; }
-
-        /* 最大限に生かすテーマ（グリッド） */
-        .theme-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 25px;
-        }
-        .theme-card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .theme-card h4 {
-            font-size: 1.3em;
-            color: #fff;
-            background: var(--secondary-color);
-            padding: 10px 20px;
-            margin: -25px -25px 20px -25px;
-            border-radius: 20px 20px 0 0;
-        }
-        .theme-card ul { list-style: none; }
-        .theme-card li { margin-bottom: 12px; padding-left: 1.5em; position: relative; }
-        .theme-card li::before { content: "✔️"; position: absolute; left: 0; color: var(--primary-color); }
-
-        /* プロフィール */
-        .profile-flex {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            background: #fff;
+        
+        .policy-card {
+            background: white;
             padding: 30px;
-            border-radius: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
         }
-        .profile-img { flex: 0 0 300px; width: 100%; }
-        .profile-img img { width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .profile-text { flex: 1; min-width: 300px; }
-        .profile-text h3 { font-size: 1.8em; margin-bottom: 10px; }
-        .profile-text .stats { color: var(--secondary-color); font-weight: 900; margin-bottom: 15px; display: block; }
-
-        /* 事務所情報 */
-        .office-info {
-            background: #2c3e50;
-            color: #fff;
-            padding: 50px 20px;
-            border-radius: 20px;
+        
+        .policy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+        }
+        
+        .policy-card h3 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .achievements {
+            background: #FDF5E6;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .achievements ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .achievements li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-left: 5px solid #FFC107;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .achievements li strong {
+            color: #667eea;
+        }
+        
+        .vision-box {
+            background: linear-gradient(135deg, #FFC107 0%, #FFA000 100%);
+            color: #333;
+            padding: 40px;
+            border-radius: 15px 15px 60px 60px;
             text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
         }
-        .insta-btn {
+
+        .vision-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 100% 150%, #FFDDAA, #FFB677);
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .vision-box h3, .vision-box p {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .vision-box h3 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        
+        .vision-box p {
+            font-size: 1.3em;
+            line-height: 2;
+        }
+        
+        .contact-info {
+            background: #FDF5E6;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .contact-item h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .instagram-btn {
             display: inline-block;
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            color: #fff;
-            padding: 15px 35px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            padding: 18px 50px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
-            margin-top: 25px;
+            font-size: 1.3em;
+            margin-top: 30px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
         }
-
-        footer { text-align: center; padding: 30px; font-size: 0.8em; color: #666; }
-
+        
+        .instagram-btn:hover {
+            transform: scale(1.08);
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
         @media (max-width: 768px) {
-            .hero .name { font-size: 2.5em; }
-            .theme-grid { grid-template-columns: 1fr; }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero .name {
+                font-size: 2.2em;
+            }
+            
+            .hero .slogan {
+                font-size: 1.6em;
+                padding: 15px 30px;
+                margin: 20px 0;
+            }
+            
+            .profile {
+                grid-template-columns: 1fr;
+            }
+            
+            .policies {
+                grid-template-columns: 1fr;
+            }
+            
+            h2::after {
+                width: 50px;
+                height: 4px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header class="hero">
-        <div class="container">
-            <h1>わが町、再生！</h1>
-            <div class="name">菅沢たまき</div>
-            <div class="slogan-badge">真心と強い覚悟で前進</div>
-            <div class="subtitle">多古町で大きな挑戦をします</div>
-        </div>
-    </header>
-
+    <div class="hero">
+        <h1>わが町、再生！</h1>
+        <div class="name">菅沢たまき</div>
+        <div class="slogan">真心と強い覚悟で前進</div>
+        <div class="subtitle">多古町で大きな挑戦をします</div>
+    </div>
+    
     <div class="container">
+        <section id="profile">
+            <h2>プロフィール</h2>
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="IMG_20251209_150349.jpg" alt="菅沢たまき">
+                </div>
+                <div class="profile-content">
+                    <h3>菅沢たまき</h3>
+                    <p><strong>経歴:</strong> 多古町議会議員 12年 (3期)</p>
+                    <p><strong>活動:</strong> NPO法人一新塾 第53期卒塾、赤松政経塾 在籍</p>
+                    <p>私たちの声を届けたい、意見を伝えたいと、町民の代弁者として多古町の議員を務めてまいりました。</p>
+                    <p>12年の間、ひとつずつひとつずつ、町民のための事業を実現し、力の限り町政に訴え続けました。</p>
+                    <p>現在は多古町をより良く変えていきたいという思いで、広い視野を持つ多種多様な方々との学びを続けています。</p>
+                    <p>今、成田空港の「第2の開港」という大きなチャンスを前に、<strong>この町を復活させるため</strong>、多古町の未来のため、新たな挑戦をさせていただきたいと決意いたしました。</p>
+                    <p><strong>皆様の力を結集し、多古町を再生させます！</strong></p>
+                </div>
+            </div>
+        </section>
         
-        <section>
-            <div class="vision-box">
-                <h3>成田空港「第2の開港」に伴う変化</h3>
+        <section id="policy">
+            <h2>重点政策</h2>
+            <div class="policies">
+                <div class="policy-card">
+                    <h3>🛫 成田空港との共生</h3>
+                    <p>「第2の開港」を多古町発展の好機に。空港関連産業の誘致と雇用創出で、若者が帰ってこられる町へ。</p>
+                </div>
+                <div class="policy-card">
+                    <h3>🚌 交通問題の解決</h3>
+                    <p>高齢者や交通弱者の移動を支援。デマンド交通の拡充と、持続可能な公共交通システムの構築。</p>
+                </div>
+                <div class="policy-card">
+                    <h3>👶 子育て・教育支援</h3>
+                    <p>子育て世代が安心して暮らせる環境づくり。教育の質の向上と、子育て支援の充実。</p>
+                </div>
+                <div class="policy-card">
+                    <h3>🌾 地域産業の振興</h3>
+                    <p>農業を基幹産業として守り、発展させる。地域ブランドの確立と6次産業化の推進。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="achievements">
+            <h2>これまでの実績</h2>
+            <div class="achievements">
                 <ul>
-                    <li>🛫 <strong>滑走路3本化</strong>：従業員は4万人から7万人規模へ拡大</li>
-                    <li>📦 <strong>貨物取扱量</strong>：200万トンから300万トンへ増強</li>
-                    <li>🚄 <strong>都心アクセス</strong>：京成成田〜押上間を30分台で結ぶ計画(2028年度)</li>
-                    <li>🛣️ <strong>圏央道多古IC</strong>：物流施設建設を含めた地域活性化の起点に</li>
+                    <li>
+                        <strong>2017年9月議会:</strong> 高齢者の通院のため、デマンド交通の平日運行を要望し、実現に向けて尽力
+                    </li>
+                    <li>
+                        <strong>循環バス問題:</strong> 循環バスの完全廃止に反対し、住民の移動手段確保のために活動
+                    </li>
+                    <li>
+                        <strong>議員活動12年:</strong> 3期にわたり、町民の皆様の声を町政に届け続けてきました
+                    </li>
                 </ul>
             </div>
         </section>
-
-        <section>
-            <h2>すぐに取り組む 5つの事業</h2>
-            <div class="action-list">
-                <div class="action-card">
-                    <h3><span>1</span>乗り合いワゴン車を導入</h3>
-                    <p>既存のデマンドに加え「定時路線型」を新設し、通院・通学の利便性を高めます。</p>
-                </div>
-                <div class="action-card">
-                    <h3><span>2</span>大型貨物施設の早期実現</h3>
-                    <p>空港と一体化した物流拠点建設のため、地権者様との丁寧な合意形成を町が主導します。</p>
-                </div>
-                <div class="action-card">
-                    <h3><span>3</span>圏央道開通による活性化</h3>
-                    <p>多古インター周辺を整備し、道の駅からの人の流れを町中心部へ呼び込みます。</p>
-                </div>
-                <div class="action-card">
-                    <h3><span>4</span>騒音・移転地域への支援</h3>
-                    <p>移転を余儀なくされる地区の皆様が、生活を存続できるよう手厚い支援を継続します。</p>
-                </div>
-                <div class="action-card">
-                    <h3><span>5</span>GPS 電波塔の設置</h3>
-                    <p>スマート農業の普及に欠かせないインフラを町独自で整備し、生産効率を向上させます。</p>
-                </div>
+        
+        <section id="vision">
+            <h2>多古町の未来ビジョン</h2>
+            <div class="vision-box">
+                <h3>今後の4年間は多古町にとって大きなチャンス</h3>
+                <p>成田空港の「第2の開港」により、多古町は新たな発展の時代を迎えます。</p>
+                <p>この好機を逃すことなく、町の資源を最大限に活かし、</p>
+                <p>すべての世代が安心して暮らせる持続可能な町づくりを実現します。</p>
+                <p><strong>「わが町、再生！」</strong></p>
             </div>
         </section>
-
-        <section>
-            <h2>チャンスを最大限に生かすテーマ</h2>
-            <div class="theme-grid">
-                <div class="theme-card">
-                    <h4>1. 公共交通の抜本的改善</h4>
-                    <ul>
-                        <li><strong>乗り合いタクシー（定時制）</strong>の導入で、お年寄りや学生の足を確保</li>
-                        <li>完全予約制デマンドタクシーの待ち時間短縮と利便性向上</li>
-                        <li><strong>第2のシャトルバス（常磐〜中村〜久賀）</strong>ルートを新設し、空港アクセスを強化</li>
-                    </ul>
+        
+        <section id="contact">
+            <h2>後援会情報</h2>
+            <div class="contact-info">
+                <h3>菅沢たまき後援会事務所</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3>📍 事務所所在地</h3>
+                        <p>多古町大高2-32</p>
+                        <p>多古町高根2915-2</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 お問い合わせ</h3>
+                        <p>電話: 080-1189-9895</p>
+                        <p>責任者: 渡邉</p>
+                    </div>
                 </div>
-                <div class="theme-card">
-                    <h4>2. 「多古町らしさ」の魅力づくり</h4>
-                    <ul>
-                        <li><strong>町内公共施設</strong>を、誰もが立ち寄りやすく居心地の良い場所へリニューアル</li>
-                        <li>既存事業を徹底精査し、将来の成長に必要な財源を戦略的に生み出す</li>
-                        <li><strong>農業自衛隊（自衛隊OB）</strong>と連携した、多古町ならではの体験型観光農園の推進</li>
-                    </ul>
+                <div style="text-align: center;">
+                    <a href="https://www.instagram.com/fuukura.tamaki/" class="instagram-btn">📸 Instagram で活動を発信中</a>
                 </div>
-                <div class="theme-card">
-                    <h4>3. 子育て・教育の徹底サポート</h4>
-                    <ul>
-                        <li>「多古町に住んでよかった」と思える、親子で遊べる公園をスピード整備</li>
-                        <li>子供たちの視野を広げる<strong>校外学習の拡充</strong>と学びの機会創出</li>
-                        <li>保険適用外の<strong>「特定不妊治療」</strong>に対し、町独自の助成金制度を導入</li>
-                    </ul>
-                </div>
-                <div class="theme-card">
-                    <h4>4. 農業の進化と持続可能性</h4>
-                    <ul>
-                        <li><strong>地域おこし協力隊や外部人材</strong>を積極的に受け入れ、新しい農業の形を模索</li>
-                        <li>大切な農地を守るため、<strong>休耕田防止</strong>に向けた地域組織の構築を支援</li>
-                        <li>新規就農者への町独自の追加補助金を新設し、担い手不足を解消</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="profile">
-            <h2>プロフィール</h2>
-            <div class="profile-flex">
-                <div class="profile-img">
-                    <img src="IMG_20251209_150349.jpg" alt="菅沢たまき 候補写真">
-                </div>
-                <div class="profile-text">
-                    <h3>菅沢たまき（すがさわ たまき）</h3>
-                    <span class="stats">多古町議会議員 3期12年（前）</span>
-                    <p>「町民の代弁者」として12年間走り続けてきました。一新塾（第53期）、赤松政経塾での学びを胸に、多古町の再生に命をかけます。</p>
-                    <p style="margin-top: 15px;"><strong>主な実績：</strong><br>
-                    2017年、高齢者の通院支援としてデマンド交通の平日運行を実現。循環バス廃止問題では住民の足を死守するため最前線で活動しました。</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="office-info">
-                <h2>菅沢たまき後援会事務所</h2>
-                <p>📍 住所：多古町大高2-32 / 多古町高根2915-2</p>
-                <p>📞 電話：080-1189-9895（責任者：渡邉）</p>
-                <a href="https://www.instagram.com/fuukura.tamaki/" class="insta-btn">📸 Instagram で活動を発信中</a>
             </div>
         </section>
     </div>
-
+    
     <footer>
         <p>&copy; 2024 菅沢たまき後援会 All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
