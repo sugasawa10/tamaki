@@ -79,10 +79,12 @@
         .logo-text p::before {
             content: "🌾";
             font-size: 1.2em;
+            flex-shrink: 0;
         }
         .logo-text p::after {
             content: "🌾";
             font-size: 1.2em;
+            flex-shrink: 0;
         }
 
         /* ヘッダー・ヒーロー */
@@ -367,11 +369,28 @@
             .theme-grid { grid-template-columns: 1fr; }
             .theme-card h5 { font-size: 1.2em; }
             .theme-card li { font-size: 1em; }
-            .profile-text h4 { font-size: 1.5em; }
-            .profile-text .stats { font-size: 1em; }
-            .profile-text p { font-size: 1em; }
-            .office-info h3 { font-size: 1.6em; }
-            .office-info p { font-size: 1em; }
+            .profile-flex { 
+                flex-direction: column; 
+                padding: 20px;
+                gap: 25px;
+            }
+            .profile-img { 
+                flex: none;
+                width: 100%;
+                max-width: 100%;
+            }
+            .profile-text { 
+                flex: none;
+                width: 100%;
+                min-width: auto;
+            }
+            .profile-text h4 { font-size: 1.4em; margin-bottom: 8px; }
+            .profile-text .stats { font-size: 0.95em; margin-bottom: 12px; }
+            .profile-text p { font-size: 0.95em; line-height: 1.7; margin-bottom: 12px; }
+            .office-info { padding: 35px 20px; }
+            .office-info h3 { font-size: 1.5em; margin-bottom: 20px; }
+            .office-info p { font-size: 0.95em; margin-bottom: 12px; }
+            .insta-btn { font-size: 1em; padding: 12px 25px; }
         }
     </style>
 </head>
