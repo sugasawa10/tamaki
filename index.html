@@ -108,20 +108,20 @@
             background: var(--primary-color);
             color: #fff;
             border: none;
-            padding: 12px 20px;
+            padding: 8px 16px;
             border-radius: 8px;
             font-weight: 700;
             cursor: pointer;
-            font-size: 1em;
-            width: 100%;
-            text-align: left;
+            font-size: 0.9em;
+            margin-left: auto;
             position: relative;
+            min-width: 120px;
         }
         .menu-toggle::after {
             content: "▼";
-            position: absolute;
-            right: 20px;
+            margin-left: 8px;
             transition: transform 0.3s;
+            font-size: 0.8em;
         }
         .menu-toggle.active::after {
             transform: rotate(180deg);
@@ -435,6 +435,11 @@
             .logo-text p { font-size: 0.75em; letter-spacing: 0; gap: 5px; }
             
             /* スマホではプルダウンメニューに */
+            .nav-container {
+                display: flex;
+                align-items: center;
+                padding: 10px 15px;
+            }
             .menu-toggle { 
                 display: block;
             }
@@ -442,16 +447,26 @@
                 display: none;
                 flex-direction: column;
                 gap: 0;
-                margin-top: 10px;
+                position: absolute;
+                top: 100%;
+                right: 15px;
+                background: #fff;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+                border-radius: 8px;
+                min-width: 200px;
+                overflow: hidden;
             }
             .nav-links.active {
                 display: flex;
             }
             .nav-links a {
-                padding: 15px 20px;
+                padding: 12px 20px;
                 border-radius: 0;
                 border-bottom: 1px solid #eee;
-                text-align: center;
+                text-align: left;
+            }
+            .nav-links a:last-child {
+                border-bottom: none;
             }
             
             .hero { padding: 50px 15px; }
