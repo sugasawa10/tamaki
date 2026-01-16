@@ -87,6 +87,38 @@
             flex-shrink: 0;
         }
 
+        /* ナビゲーションメニュー */
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px 20px;
+        }
+        .nav-container a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .nav-container a:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
         /* ヘッダー・ヒーロー */
         .hero {
             background: linear-gradient(135deg, #FFDDAA 0%, #FFB677 100%);
@@ -371,6 +403,14 @@
             .logo-container { gap: 15px; padding: 0 15px; }
             .logo-circle { width: 60px; height: 60px; font-size: 1.5em; }
             .logo-text p { font-size: 0.75em; letter-spacing: 0; gap: 5px; }
+            .nav-container { 
+                gap: 5px; 
+                padding: 10px;
+            }
+            .nav-container a { 
+                padding: 8px 12px; 
+                font-size: 0.85em;
+            }
             .hero { padding: 50px 15px; }
             .hero-photo { 
                 top: 15px;
@@ -431,6 +471,16 @@
         </div>
     </div>
 
+    <nav>
+        <div class="nav-container">
+            <a href="#profile">プロフィール</a>
+            <a href="#vision">大きなチャンス到来</a>
+            <a href="#action">5つの事業</a>
+            <a href="#theme">チャンスを生かすテーマ</a>
+            <a href="#contact">後援会事務所</a>
+        </div>
+    </nav>
+
     <header class="hero">
         <div class="hero-photo">
             <img src="hero_photo.jpg" alt="菅沢たまき">
@@ -471,7 +521,7 @@
         <section>
             <div class="section-header">
                 <span class="section-icon">🛫</span>
-                <h3>大きなチャンス到来</h3>
+                <h3 id="vision">大きなチャンス到来</h3>
             </div>
             <div class="vision-box">
                 <h4>成田空港「第2の開港」に伴う変化</h4>
@@ -487,7 +537,7 @@
         <section>
             <div class="section-header">
                 <span class="section-icon">⚡</span>
-                <h3>すぐに取り組む 5つの事業</h3>
+                <h3 id="action">すぐに取り組む 5つの事業</h3>
             </div>
             <div class="action-list">
                 <div class="action-card">
@@ -516,7 +566,7 @@
         <section>
             <div class="section-header">
                 <span class="section-icon">🌟</span>
-                <h3>チャンスを最大限に生かすテーマ</h3>
+                <h3 id="theme">チャンスを最大限に生かすテーマ</h3>
             </div>
             
             <div style="text-align: center; margin-bottom: 40px;">
@@ -568,7 +618,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="contact">
             <div class="office-info">
                 <h3>菅沢たまき後援会事務所</h3>
                 <p>📍 住所：千葉県香取郡多古町大高1-1140</p>
