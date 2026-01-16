@@ -98,13 +98,43 @@
         .nav-container {
             max-width: 1000px;
             margin: 0 auto;
+            padding: 15px 20px;
+            position: relative;
+        }
+        
+        /* ハンバーガーボタン */
+        .menu-toggle {
+            display: none;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            text-align: left;
+            position: relative;
+        }
+        .menu-toggle::after {
+            content: "▼";
+            position: absolute;
+            right: 20px;
+            transition: transform 0.3s;
+        }
+        .menu-toggle.active::after {
+            transform: rotate(180deg);
+        }
+        
+        /* メニューリスト */
+        .nav-links {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
-            padding: 15px 20px;
         }
-        .nav-container a {
+        .nav-links a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 700;
@@ -113,7 +143,7 @@
             transition: all 0.3s;
             font-size: 0.95em;
         }
-        .nav-container a:hover {
+        .nav-links a:hover {
             background: var(--primary-color);
             color: #fff;
             transform: translateY(-2px);
@@ -403,14 +433,27 @@
             .logo-container { gap: 15px; padding: 0 15px; }
             .logo-circle { width: 60px; height: 60px; font-size: 1.5em; }
             .logo-text p { font-size: 0.75em; letter-spacing: 0; gap: 5px; }
-            .nav-container { 
-                gap: 5px; 
-                padding: 10px;
+            
+            /* スマホではプルダウンメニューに */
+            .menu-toggle { 
+                display: block;
             }
-            .nav-container a { 
-                padding: 8px 12px; 
-                font-size: 0.85em;
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                margin-top: 10px;
             }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 15px 20px;
+                border-radius: 0;
+                border-bottom: 1px solid #eee;
+                text-align: center;
+            }
+            
             .hero { padding: 50px 15px; }
             .hero-photo { 
                 top: 15px;
@@ -473,13 +516,34 @@
 
     <nav>
         <div class="nav-container">
-            <a href="#profile">プロフィール</a>
-            <a href="#vision">大きなチャンス到来</a>
-            <a href="#action">5つの事業</a>
-            <a href="#theme">チャンスを生かすテーマ</a>
-            <a href="#contact">後援会事務所</a>
+            <button class="menu-toggle" onclick="toggleMenu()">メニュー</button>
+            <div class="nav-links" id="navLinks">
+                <a href="#profile" onclick="closeMenu()">プロフィール</a>
+                <a href="#vision" onclick="closeMenu()">大きなチャンス到来</a>
+                <a href="#action" onclick="closeMenu()">5つの事業</a>
+                <a href="#theme" onclick="closeMenu()">チャンスを生かすテーマ</a>
+                <a href="#contact" onclick="closeMenu()">後援会事務所</a>
+            </div>
         </div>
     </nav>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+        
+        function closeMenu() {
+            if (window.innerWidth <= 768) {
+                const navLinks = document.getElementById('navLinks');
+                const menuToggle = document.querySelector('.menu-toggle');
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        }
+    </script>
 
     <header class="hero">
         <div class="hero-photo">
